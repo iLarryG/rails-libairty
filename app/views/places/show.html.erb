@@ -1,0 +1,37 @@
+
+<div class="media">
+  <div class="media-body">
+    <div class="media-section">
+      <h2> Your chosen <%= @place.kind %> in <%= @place.city %></h2>
+
+      <!-- <img src="https://images.unsplash.com/photo-1418479631014-8cbf89db3431?dpr=1&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80&amp;cs=tinysrgb" alt> -->
+    </div>
+    <!-- <div class="media-section">
+      <h2>Description</h2>
+      ...
+    </div> -->
+  </div>
+  <div class="media-aside">
+    <div class="media-section">
+      <h2><%= @place.name.capitalize %></h2>
+      <p>
+      <%= @place.description %>
+      </p>
+      <p> The day price:
+      <%= @place.day_price %>
+      </p>
+       <p>
+       The night price:
+      <%= @place.night_price %>
+      </p>
+
+    </div>
+    <div class="media-section">
+      <p><%= link_to 'Booking', places_path(@place)  %></p>
+
+    </div>
+    <div>
+
+    </div>
+  </div>
+</div>

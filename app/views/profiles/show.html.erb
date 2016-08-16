@@ -1,0 +1,13 @@
+
+<h1>Here are your places; </h1>
+
+<p> <% current_user.places.each do |place| %>
+<%= place.name %>
+<%= link_to 'see details', profile_place_path(place)  %>
+<%= link_to 'edit', edit_profile_place_path(place), method: :get, data: { confirm: 'Are you sure you want to edit this place?'} %>
+<%= link_to 'destroy', profile_place_path(place), method: :delete, data: { confirm: 'Are you sure you want to delete this place?'} %>
+</p>
+<%end %>
+
+
+<%= link_to 'create a new place', new_profile_place_path %>

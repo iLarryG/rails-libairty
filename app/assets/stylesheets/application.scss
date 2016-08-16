@@ -14,7 +14,12 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+@import "places/index";
 
 .padded {
   padding: 100px 0;
+}
+
+b {
+  height: 200vh;
 }
