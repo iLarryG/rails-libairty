@@ -1,0 +1,11 @@
+
+<h1>Here are your places; </h1>
+
+<p> <% current_user.places.each do |place| %>
+<%= place.name %>
+<%= link_to 'see details', profile_place_path(place)  %>
+</p>
+<%end %>
+
+
+<%= link_to 'create a new place', new_profile_place_path  %>
