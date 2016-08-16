@@ -2,3 +2,31 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+ .banner{
+  background-size: cover;
+  height:100vh;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.banner h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.banner p{
+  font-size: 25px;
+  font-weight: lighter;
+  margin-bottom: 50px;
+  margin-top:25px;
+}
+
+#search_bar {
+  color: black;
+  input {
+    color: black;
+  }
+}

@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'omniauth-facebook'
 gem 'devise'
 gem 'rails', '5.0.0'
