@@ -1,0 +1,27 @@
+<div class="text-center">
+<h1> Write a new article </h1>
+<%= form_for(@place) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :kind %>
+<%= f.text_field :kind %>
+
+<%= f.label :city %>
+<%= f.text_field :city %>
+
+<%= f.label :address %>
+<%= f.text_field :address %>
+
+<%= f.label :description %>
+<%= f.text_field :description %>
+
+<%= f.label :day_price %>
+<%= f.text_field :day_price %>
+
+<%= f.label :night_price %>
+<%= f.text_field :night_price %>
+
+<%= f.submit %>
+<% end %>
+</div>
