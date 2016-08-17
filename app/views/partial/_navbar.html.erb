@@ -1,9 +1,8 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-
-  <a href="/" class="navbar-wagon-brand">
-     <%= image_tag 'leaf.jpg', class: "avatar",  data: { toggle: 'dropdown'}  %>
-  </a>
+<%= link_to root_path, class:"navbar-wagon-brand" do  %>
+     <%= image_tag 'leaf.jpg', class: "avatar"  %>
+     <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">

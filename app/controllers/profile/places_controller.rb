@@ -32,7 +32,7 @@ class Profile::PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :city, :kind, :description, :day_price, :night_price)
+    params.require(:place).permit(:name, :address, :city, :kind, :description, :photo, :photo_cache, :day_price, :night_price)
   end
 
   def set_place
