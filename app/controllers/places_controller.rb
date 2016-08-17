@@ -3,8 +3,13 @@ class PlacesController < ApplicationController
   before_action :set_place, only: [:show]
 
   def index
+    if params[:city]
+      @places = Place.where("city ILIKE ?", "%#{params[:city]}%")
+    else
     @places = Place.where.not(latitude: nil, longitude: nil)
 
+      
+    end
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
       marker.lat place.latitude
       marker.lng place.longitude
