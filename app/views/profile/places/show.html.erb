@@ -1,21 +1,20 @@
 <div class="item-interface">
-<h2><%= @place.name.capitalize %></h2>
- <p>
-      What ? <%= @place.kind %>
-      </p>
-      <p> Where:
-      <%= @place.city %>
-      </p>
+  <h2><%= @place.name.capitalize %></h2>
 
-      <p> About:
-      <%= @place.description %>
-      </p>
-      <p> The day price:
-      <%= @place.day_price %>
-      </p>
-       <p>
-       The night price:
-      <%= @place.night_price %>
-      </p>
-</div>
 
+
+
+
+
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+    <div class="card-category">  What ? <%= @place.kind %></div>
+    <div class="card-description">
+      <h2>  <%= @place.city %></h2>
+      <p> <%= @place.description %></p>
+      <p> The day price: <%= @place.day_price %></p>
+      <p> The night price:<%= @place.night_price %></p>
+     </div>
+
+     <a class="card-link" href="#" ></a>
+   </div>
+ </div>

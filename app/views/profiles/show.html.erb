@@ -1,11 +1,20 @@
 
-<h1>Here are your places; </h1>
-
-<p> <% current_user.places.each do |place| %>
-<%= place.name %>
-<%= link_to 'see details', profile_place_path(place)  %>
-</p>
-<%end %>
-
-
+<div class="btn-treehouse">
 <%= link_to 'create a new place', new_profile_place_path  %>
+</div>
+<div class="text-center">
+<h1>Here are your places: </h1>
+
+<div class="container">
+  <div class="row">
+    <% current_user.places.each do |place| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: url('');">
+        <h2> <%= place.name %></h2>
+        <p><%= link_to 'see details', profile_place_path(place), style: "btn-medium"  %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
