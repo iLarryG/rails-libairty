@@ -1,0 +1,24 @@
+<h1>Booking details</h1>
+
+<p> You want to go to :
+ <% current_user.places.each do |place| %>
+ <%= place.name %>,
+ <%= place.city %> and you will pay:
+ <%= place.day_price %>
+ </p>
+ <%end %>
+
+<h1>When do you want to rent it ? </h1>
+<%= form_for [@place, @booking] do |f| %>
+  <%= f.label :event_date %>
+  <%= f.text_field :event_date %>
+
+  <%= f.label :event_time %>
+  <%= f.text_field :event_time %>
+
+  <%= f.submit "Cancel", :type => "reset" %>
+  <%= f.submit "Confirm" %>
+
+<% end %>
+
+

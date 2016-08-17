@@ -5,14 +5,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :places, only: [:index, :show] do
     # resources :users, only: [:new, :create]
-    resources :bookings, only: [:show, :new]
+    resources :bookings, only: [:new, :create]
   end
 
   resource :profile, only: [:show]
 
   namespace :profile do
     resources :places
-    resources :bookings, only: [:index]
+    resources :bookings, only: [:index, :show]
   end
 end
 
