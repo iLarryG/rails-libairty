@@ -21,12 +21,12 @@ class Profile::PlacesController < ApplicationController
 
   def update
     @place.update(place_params)
-    #redirect_to
+    redirect_to profile_place_path(@place)
   end
 
   def destroy
     @place.destroy
-    #redirect_to
+    redirect_to profile_path
   end
 
   private

@@ -1,11 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
+<div class="banner" style="background-image:url('<%= image_path @background %>')">
+
+  <div class="banner-content text-center">
+    <h1>libAIRty</h1>
+    <p>Rent unique outside places</p>
+    <%= form_tag("/places", method: "get") do %>
+    <div class="content-form" id="search_bar">
+
+        <%= text_field_tag :city %>
+
+        <%= date_field_tag :event_date %>
+
+        <%= submit_tag %>
+    </div>
+    <% end %>
+    <!--     <a href="http://lmgtfy.com/?q=google" target="_blank" class=" btn btn-primary btn-lg">Get started</a> -->
+  </div> 
 </div>
-
-<%= link_to "log out", destroy_user_session_path, method: :delete %>
