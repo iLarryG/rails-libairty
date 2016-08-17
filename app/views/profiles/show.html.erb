@@ -37,5 +37,29 @@
 
 
 
+<h1> Who's coming to your place ? </h1>
+
+<p> <% current_user.places.each do |place| %>
+  <% place.bookings.each do |booking| %>
+  <%= booking.event_date %>
+  <% end %>
+  <%= place.name %>
+</p>
+<%end %>
+
+
+
+
+<h1>Your personal fresh air breath:  </h1>
+
+<p> <% current_user.bookings.each do |booking| %>
+  <%= booking.place.name %>
+  <%= booking.event_date %>
+  <% end %>
+</p>
+
+
+=======
+
 
 
