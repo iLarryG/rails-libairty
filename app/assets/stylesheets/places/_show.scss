@@ -50,63 +50,107 @@
 }
 
 
-.card {
-  height: 300px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  background-size: cover !important;
-  color: #005722;
-  position: relative;
-  width: 500px;
-  border-radius: 6px;
-}
-
-.card-category {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 10px;
-  text-transform: uppercase;
-}
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 13px;
-}
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  z-index:2;
-  background: black;
-  opacity: 0;
-}
-.card-link:hover{
-  opacity: 0.1;
-}
-
 
 .container {
   text-decoration: none;
+
 }
 
 .btn-treehouse {
   color: white;
   padding: 10px 15px;
-  border-radius: 4px;
   font-weight: bold;
+  font-size: 24;
   background: #6AD58B;
   transition: background 0.3s ease;
+  text-decoration: none;
+  border-radius: 7px;
+  text-align: center;
+  height: 40px
 }
+
+// p {
+//   padding-top: 10px;
+// }
+
 .btn-treehouse:hover {
   opacity: 1;
   background: #3ac162;
   text-decoration: none;
   color: white;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top:  30px;
+}
+
+.products {
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  background-color: #FDFDFD;
+  margin: 40px 0px;
+  padding-left: 40px;
+  height: 200px;
+  li{
+    padding-bottom:20px;
+  }
+}
+
+/* Body design */
+.product-body {
+
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-top: 20px;
+
+}
+.product-body h2 {
+  font-weight: bold;
+  font-size: 23px;
+
+  margin-right: 10px;
+  padding-top: 34px;
+}
+.product-body p {
+  font-weight: lighter;
+  color: black;
+  margin-bottom: 0;
+
+}
+
+.list-inline {
+  display: flex;
+  align-items: right;
+  padding-bottom: 20px;
+
+}
+
+
+/* Controls design */
+.product-controls {
+  display: flex;
+  align-items: right;
+
+  margin: 0px;
+  margin-left: 30px;
+
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+
+/* Hover effects */
+.products:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+.name_image {
+  display: flex;
+  align-items: center;
+}
+
+

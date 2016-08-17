@@ -1,0 +1,23 @@
+li {
+  list-style-type: none;
+  padding-top: 13px;
+}
+
+.new_place, .edit_place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  label {
+    margin: 20px;
+    width: 100px;
+  }
+  input {
+    width: 300px;
+  }
+  .optional {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+  }
+}

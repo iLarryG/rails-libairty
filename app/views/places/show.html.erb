@@ -13,6 +13,7 @@
   </div>
   <div class="media-aside">
     <div class="media-section">
+
       <h2><%= @place.name.capitalize %></h2>
       <p>
       <%= @place.description %>
@@ -24,6 +25,7 @@
        The night price:
       <%= @place.night_price %>
       </p>
+    <%= cl_image_tag @place.photo, height: 300, width: 400, crop: :fill %>
 
     </div>
     <div class="media-section">
