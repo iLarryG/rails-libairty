@@ -1,11 +1,13 @@
   hellloooo
 
+
+
   <div class="container">
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
         <ul style=" list-style: none; margin-left: -40px;">
           <% @places.each do |place| %>
-          <li>
+
             <h3> <%= link_to place.name, place_path(place) %> </h3>
             <p> Kind:  <%= place.kind%> </p>
             <p> City:  <%= place.city%> </p>
@@ -13,7 +15,7 @@
             <p> About: <%= place.description%> </p>
             <p> Day price: <%= place.day_price%> </p>
             <p> Night price: <%= place.night_price%> </p>
-          </li>
+
           <% end %>
         </ul>
       </div>
@@ -22,3 +24,16 @@
 
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+  </div>
+</div>

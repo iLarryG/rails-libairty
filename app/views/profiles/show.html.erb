@@ -1,16 +1,27 @@
 
-<h1>Here are your places; </h1>
+<div class="btn-treehouse">
+  <%= link_to 'create a new place', new_profile_place_path  %>
+</div>
+<div class="text-center">
+  <h1>Here are your places: </h1>
 
-<p> <% current_user.places.each do |place| %>
-  <%= place.name %>
-  <%= link_to 'see details', profile_place_path(place)  %>
-  <%= link_to 'edit', edit_profile_place_path(place), method: :get, data: { confirm: 'Are you sure you want to edit this place?'} %>
-  <%= link_to 'destroy', profile_place_path(place), method: :delete, data: { confirm: 'Are you sure you want to delete this place?'} %>
-</p>
-<%end %>
+  <div class="container">
+    <div class="row">
+      <% current_user.places.each do |place| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: url('');">
+          <h2> <%= place.name %></h2>
+          <p><%= link_to 'see details', profile_place_path(place), style: "btn-medium"  %></p>
+          <p> <%= link_to 'edit', edit_profile_place_path(place), method: :get, data: { confirm: 'Are you sure you want to edit this place?'} %></p>
+          <p><%= link_to 'destroy', profile_place_path(place), method: :delete, data: { confirm: 'Are you sure you want to delete this place?'} %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 
-<%= link_to 'create a new place', new_profile_place_path %>
 
 -----------------
 <h1> Who's coming to your place ? </h1>
@@ -33,5 +44,9 @@
   <%= booking.event_date %>
   <% end %>
 </p>
+
+
+=======
+
 
 
