@@ -5,7 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
 Place.create!(user_id: 1, name: "My Garden", kind: "garden", city: "Brussels", address: "63 rue fernand bernier st gilles", description: "blablabla", day_price: 12, night_price: 20)
+
+
+
+5.times do
+  User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+    )
+
+end
+
+10.times do
+
+  Place.create!(
+    name: ["My Eden", "Crazy Rooftop", "Nicest place on earth"].sample,
+    kind: ["garden", "balcony", "garden with a pool", "rooftop"].sample,
+    city: Faker::Address.city,
+    address: Faker::Address.street_address,
+    description: Faker::Lorem.paragraph,
+    day_price: [10,5,15].sample,
+    night_price: [10,15,20].sample,
+    user: User.all.sample
+    )
+end
+
+
+
 
 
