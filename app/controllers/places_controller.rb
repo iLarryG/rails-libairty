@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
   before_action :set_place, only: [:show]
 
   def index
-    if params[:city]
+    if params[:city] != ""
       @places = Place.where("city ILIKE ?", "%#{params[:city]}%")
     else
     @places = Place.where.not(latitude: nil, longitude: nil)
