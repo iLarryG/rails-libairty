@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160818130326) do
     t.integer  "night_price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "photo"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "photo"
