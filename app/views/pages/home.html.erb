@@ -5,13 +5,12 @@
     <h1>libAIRty</h1>
     <p>Rent unique outside places</p>
     <%= form_tag("/places", method: "get") do %>
-    <div class="content-form" id="search_bar">
+    <div class="content-form form-group" id="search_bar">
+        <%= text_field_tag :city, nil, class:"home-search", placeholder: 'City' %>
 
-        <%= text_field_tag :city, "City" %>
+        <%= date_field_tag :event_date, nil, class: "home-search" %>
 
-        <%= date_field_tag :event_date %>
-
-        <%= submit_tag %>
+        <%= submit_tag("submit", class:"search-btn navbar-wagon-item navbar-wagon-button btn") %>
     </div>
     <% end %>
     <!--     <a href="http://lmgtfy.com/?q=google" target="_blank" class=" btn btn-primary btn-lg">Get started</a> -->
