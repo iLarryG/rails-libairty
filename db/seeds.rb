@@ -13,7 +13,8 @@ Place.create!(user_id: 1, name: "My Garden", kind: "garden", city: "Brussels", a
 
 5.times do
   User.create!(
-    name: Faker::Name.name,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: Faker::Internet.password
     )
