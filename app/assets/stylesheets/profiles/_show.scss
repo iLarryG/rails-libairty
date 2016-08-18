@@ -1,0 +1,64 @@
+.tabs {
+  width: 750px;
+  display: flex;
+  margin: 0 auto;
+}
+.tabs a {
+  color: #FDFDFD;
+}
+.middle_tab {
+  flex: 1 0 auto !important;
+}
+
+.tabs a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.tabs h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 0;
+}
+.tabs p {
+  opacity: 0.5;
+  margin-bottom: 0;
+}
+.tab {
+  background: #6AD58B;
+  flex: 0 0 33.3333%;
+  text-align: center;
+  padding: 20px 0;
+}
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+.tab.active {
+  background: white;
+  color: black;
+}
+
+.profile-header-wrapper {
+  margin-bottom: -20px;
+}
+
+.background-green {
+  background: #6AD58B;
+  opacity: 0.8;
+  width: 750px;
+  margin: 0 auto;
+}
+
+.show-background {
+  background-image: url("Vietnam_Mu_Cang_Chai.jpg");
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+

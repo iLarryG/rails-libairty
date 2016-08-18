@@ -103,8 +103,11 @@
 .product-body {
 
   padding-top: 20px;
-  padding-left: 20px;
   margin-top: 20px;
+  padding-bottom: 20px;
+  h2 {
+    margin-left: 20px;
+  }
 
 }
 .product-body h2 {
