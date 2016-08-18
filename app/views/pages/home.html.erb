@@ -7,7 +7,7 @@
     <%= form_tag("/places", method: "get") do %>
     <div class="content-form" id="search_bar">
 
-        <%= text_field_tag :city %>
+        <%= text_field_tag :city, "City" %>
 
         <%= date_field_tag :event_date %>
 
@@ -15,5 +15,5 @@
     </div>
     <% end %>
     <!--     <a href="http://lmgtfy.com/?q=google" target="_blank" class=" btn btn-primary btn-lg">Get started</a> -->
-  </div> 
+  </div>
 </div>
