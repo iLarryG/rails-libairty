@@ -1,48 +1,54 @@
 
 <div class="media">
   <div class="media-body">
-    <div class="media-section">
-      <h2> Your chosen <%= @place.kind %> in <%= @place.city %></h2>
+  <div class="media-section ">
+     <%= cl_image_tag @place.photo %>
+     <h2> <%= @place.description %></h2>
 
-      <!-- <img src="https://images.unsplash.com/photo-1418479631014-8cbf89db3431?dpr=1&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80&amp;cs=tinysrgb" alt> -->
-    </div>
+     <!-- <img src="https://images.unsplash.com/photo-1418479631014-8cbf89db3431?dpr=1&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80&amp;cs=tinysrgb" alt> -->
+   </div>
     <!-- <div class="media-section">
       <h2>Description</h2>
       ...
     </div> -->
+
+    <div class="media-aside">
+     <h3>Address: </h3> <%= @place.address%>
+     <p><h3>City: </h3><%= @place.city%></p>
+     <p><h3>Kind: </h3><%= @place.kind%></p>
+   </div>
+
+ </div>
+ <div class="media-aside">
+  <div class="media-section text-center">
+
+    <h2><%= @place.name.capitalize %></h2>
+
+    <p>
+      <%= @place.day_price %>  <span class="glyphicon glyphicon-eur" aria-hidden="true"></span> per day
+    </p>
+
+    <% if @place.user.facebook_picture_url %>
+    <%= image_tag @place.user.facebook_picture_url, class: "avatar-large" %>
+
+
+    <% else %>
+    <%= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
+
+    <% end %>
+    <div class="name-attributes">
+      <%= @place.user.first_name %>
+      <%= @place.user.last_name %>
+    </div>
+
   </div>
-  <div class="media-aside">
-    <div class="media-section">
+  <div class="media-section text-center">
+    <p><%= link_to 'Book', new_place_booking_path(@place), class: "navbar-wagon-button btn" %></p>
 
-      <h2><%= @place.name.capitalize %></h2>
-      <p>
-      <%= @place.description %>
-      </p>
-      <p> The day price:
-      <%= @place.day_price %>
-      </p>
-       <p>
-       The night price:
-      <%= @place.night_price %>
-      </p>
-    <%= cl_image_tag @place.photo, height: 300, width: 400, crop: :fill %>
+  </div>
+  <div>
 
-    </div>
-    <div class="media-section">
-      <p><%= link_to 'Booking', new_place_booking_path(@place) %></p>
-
-    </div>
-    <div>
-
-    </div>
   </div>
 </div>
+</div>
 
-    <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var coord = <%= raw @place_coordinates.to_json %>;
-      alert('place coordinates are ' + coord.lat + ', ' + coord.lng);
-    });
-  <% end %>
-<% end %>
