@@ -62,7 +62,7 @@
 
 
 <div class="background-green">
-<div class="tab-content hidden" id="projects">
+  <div class="tab-content hidden" id="projects">
     <div class='product-body'>
 
       <% current_user.places.reverse.each do |place| %>
@@ -72,6 +72,8 @@
       <div class="products">
         <% place.bookings.each do |booking| %>
         <%= booking.event_date %>
+        <%= booking.user.first_name %>
+        <%= booking.user.last_name %>
 
         <% end %>
       </div>
@@ -86,11 +88,15 @@
   <div class="tab-content hidden" id="contact">
     <div class="product-body">
       <% current_user.bookings.each do |booking| %>
-      <h2>
-      <%= booking.place.name %>
+      <h2> Don't forget :
+        <%= booking.event_date %> at
+        <%= booking.event_time %>
       </h2>
       <div class="products">
-        <%= booking.event_date %>
+        <p>Where: <%= booking.place.name%> </p>
+        <p>Address: <%= booking.place.address %></p>
+        <p>Your Host: <%= booking.place.user.first_name %>
+        <%= booking.place.user.last_name %> </p>
       </div>
       <% end %>
     </div>
