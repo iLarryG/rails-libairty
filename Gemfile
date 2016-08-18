@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
+gem "country_select"
 gem "coffee-rails"
 gem "gmaps4rails"
 source 'https://rails-assets.org' do
