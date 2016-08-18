@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
 
   def index
     if params[:city] != ""
-      @places = Place.where("city ILIKE ?", "%#{params[:city]}%")
+      @places = Place.where("city ILIKE ?", "%#{params[:city].capitalize}%")
     else
     @places = Place.where.not(latitude: nil, longitude: nil)
 
