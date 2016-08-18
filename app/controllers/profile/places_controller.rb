@@ -10,7 +10,9 @@ class Profile::PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(place_params)
+    new_params = place_params
+    new_params[:city] = new_params[:city].capitalize
+    @place = Place.new(new_params)
     @place.user = current_user
     @place.save
     redirect_to profile_path
