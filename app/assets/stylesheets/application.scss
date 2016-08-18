@@ -16,7 +16,12 @@
 @import "vendor/index";
 @import "places/index";
 @import "profiles/index";
+@import "bookings/index";
 
 .padded {
   padding: 100px 0;
+}
+
+body {
+  min-height: 100vh;
 }
