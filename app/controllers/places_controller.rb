@@ -20,6 +20,10 @@ class PlacesController < ApplicationController
   def show
     @alert_message = "You are viewing #{@place.name}"
     @place_coordinates = { lat: @place.latitude, lng: @place.longitude }
+    @hash = Gmaps4rails.build_markers(@place) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+    end
   end
 
 private
