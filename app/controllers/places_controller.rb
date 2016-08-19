@@ -35,11 +35,3 @@ private
     @place = Place.find(params[:id])
   end
 end
-
-
-
-
-
-
-
-

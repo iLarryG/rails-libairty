@@ -1,41 +1,41 @@
-
-.card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  color: white;
+/* Card design */
+.card{
   position: relative;
-  padding: 30px;
+  background-size: cover !important;
+  height: 250px;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: all 300ms ease;
   opacity: 1;
-  transition: all 200ms ease;
-  transform: scale(1);
+  transform: scale(1) rotate(0deg);
+  box-shadow: 0px 0px 0px rgba(1,1,1, 0.5);
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.01) rotate(0.2deg);
+    box-shadow: 3px 3px 3px rgba(1,1,1, 0.5);
+  }
 }
 
-.card-user {
+.card-user{
   position: absolute;
-  right: 10px;
   top: 10px;
+  right: 10px;
 }
-.card-category {
+
+.card-category{
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: 10px;
-  text-transform: uppercase;
+  font-size: 25px;
 }
-.card-description {
+
+.card-description{
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 13px;
-  }
 
-.card:hover{
-  opacity: 0.9;
-  transform: scale(1.06);
+.background_default {
+  background-image: "background_show.jpeg";
 }
