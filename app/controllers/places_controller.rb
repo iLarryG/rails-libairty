@@ -6,10 +6,15 @@ class PlacesController < ApplicationController
     if params[:city] != ""
       @places = Place.where("city ILIKE ?", "%#{params[:city].capitalize}%")
     else
-    @places = Place.where.not(latitude: nil, longitude: nil)
-
-      
+      @places = Place.where.not(latitude: nil, longitude: nil)  
     end
+
+    # if @place.photo
+    #   @card_background = @place.photo
+    # else
+    #   @card_background = ["sky.jpeg"]
+    # end
+
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
       marker.lat place.latitude
       marker.lng place.longitude
