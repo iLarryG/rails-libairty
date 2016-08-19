@@ -8,6 +8,7 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+
 }
 
 /* Optional class to fix the navbar on top */
@@ -132,6 +133,12 @@
 }
 
 .dropdown span {
-    margin-right: 15px;
+    margin-right: 30px;
     color: #137909;
+    text-decoration: none;
+}
+
+.dropdown a {
+    color: #137909;
+    text-decoration: none;
 }
