@@ -34,14 +34,14 @@
   <div class="background-green">
     <div class="tab-content" id="spots">
       <div class='product-body'>
-        <% current_user.places.reverse.each do |place| %>
+        <% current_user.places.each do |place| %>
         <h2>
-          <%= place.name %>
+          <%= place.name.capitalize %>
 
         </h2>
-        <div class="guests">
+        <div class="products">
           <div class="name_image">
-            <%= cl_image_tag place.photo, height: 100, width: 100, crop: :fill, class:"avatar-large" %>
+            <%= cl_image_tag place.photo, height: 120, width: 120, crop: :fill%>
             <ul class="list-inline product-controls">
               <li><%= link_to 'see details', profile_place_path(place), style: "btn-medium"  %></li>
               <li> <%= link_to edit_profile_place_path(place), method: :get, data: { confirm: 'Are you sure you want to edit this place?'} do %>
@@ -71,11 +71,16 @@
         <%= place.name %>
       </h2>
       <div class="products">
+        <% if place.bookings.blank? %>
+        <h4> <%= "You don't have any guest for this spot." %> </h4>
+
+        <%else %>
         <% place.bookings.each do |booking| %>
         <%= booking.event_date %>
         <%= booking.user.first_name %>
         <%= booking.user.last_name %>
 
+        <% end %>
         <% end %>
       </div>
       <%end %>
