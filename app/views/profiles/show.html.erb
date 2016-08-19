@@ -1,62 +1,63 @@
 
 <div class="show-background"></div>
-<div class="profile-header-wrapper">
-  <div class="profile-header-container text-center">
-    <div class="profile-header-infos">
+<div class="padded">
+  <div class="profile-header-wrapper">
+    <div class="profile-header-container text-center">
+      <div class="profile-header-infos">
 
-      <% if current_user.facebook_picture_url %>
-      <%= image_tag current_user.facebook_picture_url, class:"avatar-large", data: { toggle: 'dropdown'} %>
-      <% else %>
-      <%= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
-      <% end %>
-      <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-    </div>
+        <% if current_user.facebook_picture_url %>
+        <%= image_tag current_user.facebook_picture_url, class:"avatar-large", data: { toggle: 'dropdown'} %>
+        <% else %>
+        <%= image_tag 'placeholder.png', class: "avatar",  data: { toggle: 'dropdown'}  %>
+        <% end %>
+        <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+      </div>
 
 
-    <div class="tabs">
-      <a class="tab active" data-target="#spots">
-        <p>Manage</p>
-        <h3>Your spots</h3>
-      </a>
-      <a class="middle_tab tab" data-target="#guests">
-        <p>Manage</p>
-        <h3>Your guests</h3>
-      </a>
-      <a class="tab" data-target="#bookings">
-        <p>Manage</p>
-        <h3>Your bookings</h3>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="background-green">
-  <div class="tab-content" id="spots">
-    <div class='product-body'>
-      <% current_user.places.reverse.each do |place| %>
-      <h2>
-        <%= place.name %>
-
-      </h2>
-      <div class="guests">
-        <div class="name_image">
-          <%= cl_image_tag place.photo, height: 100, width: 100, crop: :fill, class:"avatar-large" %>
-          <ul class="list-inline product-controls">
-            <li><%= link_to 'see details', profile_place_path(place), style: "btn-medium"  %></li>
-            <li> <%= link_to edit_profile_place_path(place), method: :get, data: { confirm: 'Are you sure you want to edit this place?'} do %>
-             <i class="fa fa-pencil"></i>
-             <% end %>
-           </li>
-           <li>  <%= link_to profile_place_path(place), method: :delete, data: { confirm: 'Are you sure you want to delete this place?'} do %>
-            <i class="fa fa-trash-o"></i>
-            <% end %>
-          </li>
-        </ul>
+      <div class="tabs">
+        <a class="tab active" data-target="#spots">
+          <p>Manage</p>
+          <h3>Your spots</h3>
+        </a>
+        <a class="middle_tab tab" data-target="#guests">
+          <p>Manage</p>
+          <h3>Your guests</h3>
+        </a>
+        <a class="tab" data-target="#bookings">
+          <p>Manage</p>
+          <h3>Your bookings</h3>
+        </a>
       </div>
     </div>
-    <% end %>
   </div>
-</div>
+
+  <div class="background-green">
+    <div class="tab-content" id="spots">
+      <div class='product-body'>
+        <% current_user.places.reverse.each do |place| %>
+        <h2>
+          <%= place.name %>
+
+        </h2>
+        <div class="guests">
+          <div class="name_image">
+            <%= cl_image_tag place.photo, height: 100, width: 100, crop: :fill, class:"avatar-large" %>
+            <ul class="list-inline product-controls">
+              <li><%= link_to 'see details', profile_place_path(place), style: "btn-medium"  %></li>
+              <li> <%= link_to edit_profile_place_path(place), method: :get, data: { confirm: 'Are you sure you want to edit this place?'} do %>
+               <i class="fa fa-pencil"></i>
+               <% end %>
+             </li>
+             <li>  <%= link_to profile_place_path(place), method: :delete, data: { confirm: 'Are you sure you want to delete this place?'} do %>
+              <i class="fa fa-trash-o"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
@@ -96,11 +97,12 @@
         <p>Where: <%= booking.place.name%> </p>
         <p>Address: <%= booking.place.address %></p>
         <p>Your Host: <%= booking.place.user.first_name %>
-        <%= booking.place.user.last_name %> </p>
+          <%= booking.place.user.last_name %> </p>
+        </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
 
+    </div>
   </div>
 </div>
 
