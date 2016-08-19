@@ -14,15 +14,15 @@
 
 
     <div class="tabs">
-      <a class="tab active" data-target="#bio">
+      <a class="tab active" data-target="#spots">
         <p>Manage</p>
         <h3>Your spots</h3>
       </a>
-      <a class="middle_tab tab" data-target="#projects">
+      <a class="middle_tab tab" data-target="#guests">
         <p>Manage</p>
         <h3>Your guests</h3>
       </a>
-      <a class="tab" data-target="#contact">
+      <a class="tab" data-target="#bookings">
         <p>Manage</p>
         <h3>Your bookings</h3>
       </a>
@@ -31,14 +31,14 @@
 </div>
 
 <div class="background-green">
-  <div class="tab-content" id="bio">
+  <div class="tab-content" id="spots">
     <div class='product-body'>
       <% current_user.places.reverse.each do |place| %>
       <h2>
         <%= place.name %>
 
       </h2>
-      <div class="products">
+      <div class="guests">
         <div class="name_image">
           <%= cl_image_tag place.photo, height: 100, width: 100, crop: :fill, class:"avatar-large" %>
           <ul class="list-inline product-controls">
@@ -62,7 +62,7 @@
 
 
 <div class="background-green">
-  <div class="tab-content hidden" id="projects">
+  <div class="tab-content hidden" id="guests">
     <div class='product-body'>
 
       <% current_user.places.reverse.each do |place| %>
@@ -85,7 +85,7 @@
 
 
 <div class="background-green">
-  <div class="tab-content hidden" id="contact">
+  <div class="tab-content hidden" id="bookings">
     <div class="product-body">
       <% current_user.bookings.each do |booking| %>
       <h2> Don't forget :
@@ -106,10 +106,7 @@
 
 
 
-<div class="wrapper">
-  <p><%= link_to 'CREATE NEW', new_profile_place_path, class: "btn-treehouse"  %></p>
-</div>
-</div>
+
 
 
 
