@@ -13,6 +13,17 @@
 
   <%= f.input :country, priority: [ 'BE' ] %>
 
+  <h3>Availibilities</h3>
+  <div id= 'availibilities'>
+    <%= f.simple_fields_for :availibilities do |availibility| %>
+      <%= render 'availibility_fields', f: availibility %>
+    <% end %>
+
+    <div class='links'>
+      <%= link_to_add_association 'add availibility', f, :availibilities %>
+    </div>
+  </div>
+
   <%= f.input :description %>
 
   <%= f.input :day_price %>
@@ -24,4 +35,7 @@
   <%= f.submit class:"btn btn-treehouse" %>
   <% end %>
 </ul>
+
+
+
 
