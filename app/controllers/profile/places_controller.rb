@@ -14,8 +14,14 @@ class Profile::PlacesController < ApplicationController
     new_params[:city] = new_params[:city].capitalize
     @place = Place.new(new_params)
     @place.user = current_user
-    @place.save
-    redirect_to profile_path
+
+    # raise
+
+    if @place.save
+      redirect_to profile_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -34,7 +40,7 @@ class Profile::PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :city, :kind, :description, :photo, :photo_cache, :day_price, :night_price, :zip_code, :country)
+    params.require(:place).permit(:name, :address, :availibility, :city, :kind, :description, :photo, :photo_cache, :day_price, :night_price, :zip_code, :country, availibilities_attributes: [:id, :date, :_destroy])
   end
 
   def set_place

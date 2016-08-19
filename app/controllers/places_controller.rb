@@ -3,17 +3,15 @@ class PlacesController < ApplicationController
   before_action :set_place, only: [:show]
 
   def index
-    if params[:city] != ""
+    if params[:city].present?
       @places = Place.where("city ILIKE ?", "%#{params[:city].capitalize}%")
     else
-      @places = Place.where.not(latitude: nil, longitude: nil)  
+      @places = Place.where.not(latitude: nil, longitude: nil)
     end
 
-    # if @place.photo
-    #   @card_background = @place.photo
-    # else
-    #   @card_background = ["sky.jpeg"]
-    # end
+    if params[:event_date].present?
+      @places = @places.joins(:availibilities).where(availibilities: { date: params[:event_date] })
+    end
 
     @hash = Gmaps4rails.build_markers(@places) do |place, marker|
       marker.lat place.latitude
@@ -37,11 +35,3 @@ private
     @place = Place.find(params[:id])
   end
 end
-
-
-
-
-
-
-
-

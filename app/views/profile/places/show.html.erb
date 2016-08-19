@@ -20,6 +20,12 @@
        <hr>
      <h3>Kind: </h3><%= @place.kind%>
        <hr>
+      <h3>Availability:</h3>
+      <% @place.availibilities.each do |availibility| %>
+      <%= availibility.date %>
+
+      <hr>
+      <% end %>
    </div>
 
  </div>

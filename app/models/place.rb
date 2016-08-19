@@ -8,4 +8,7 @@ class Place < ApplicationRecord
 
   has_many  :bookings, dependent: :destroy
 
+  has_many  :availibilities, dependent: :destroy
+  accepts_nested_attributes_for :availibilities, reject_if: :all_blank, allow_destroy: true
+
 end

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818130326) do
+ActiveRecord::Schema.define(version: 20160819124336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availibilities", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_availibilities_on_place_id", using: :btree
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.date     "event_date"
@@ -36,13 +44,14 @@ ActiveRecord::Schema.define(version: 20160818130326) do
     t.integer  "user_id"
     t.integer  "day_price"
     t.integer  "night_price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.float    "latitude"
     t.float    "longitude"
     t.string   "photo"
     t.string   "zip_code"
     t.string   "country"
+    t.date     "availibility"
     t.index ["user_id"], name: "index_places_on_user_id", using: :btree
   end
 
@@ -71,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160818130326) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "availibilities", "places"
   add_foreign_key "bookings", "places"
   add_foreign_key "bookings", "users"
   add_foreign_key "places", "users"
